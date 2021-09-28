@@ -179,7 +179,10 @@ class V2Agent {
     }
     debug(`Alternative query result: ${JSON.stringify(this.agent.alternativeQueryResults)}`);
   }
-
+  
+  addSessionEntity_(entities) {
+    this.addJson_({sessionEntityTypes: entities});
+  }
   /**
    * Add v2 text response to Dialogflow fulfillment webhook request based on
    * single, developer defined text response
