@@ -250,14 +250,12 @@ class WebhookClient {
     }
   }
   /**
-   * Add a session entity or list of session to be sent to Dialogflow
+   * Add a session entity type list to be sent to Dialogflow
    *
-   * @param {json|json[]} session entity (list) or single entity
+   * @param {json[]} session entity (list)
    */
   addSessionEntity(entity) {
     if (entity instanceof Array) {
-      responses.forEach( (singleEntity) => this.client.addSessionEntity_(singleEntity) );
-    } else {
       this.client.addSessionEntity_(entity);
     }
   }
